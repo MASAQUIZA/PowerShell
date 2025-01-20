@@ -1,4 +1,4 @@
-# PowerShell
+## PowerShell##
 * cp = Copy-Item
 * rm =Remove-Item
 * cd =Set-Location
@@ -7,7 +7,11 @@
 * history =Get-History
 * alias =New-Alias
 * cat =Get-Content
-#COMMANDE POUR TROUVER CMDLETS POWERSHELL#
+
+
+##COMMANDE POUR TROUVER CMDLETS POWERSHELL##
+
+
 - #Get-Command -Name *copy*
 - #Get-Command -Name *remove*
 - #Get-Command -Verb Set -Noun_ Location
