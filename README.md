@@ -1,12 +1,12 @@
 # PowerShell
-cp= Copy-Item
-rm=Remove-Item
-cd=Set-Location
-mkdir=New-Item-ItemType
-man=Get-Help
-history=Get-History
-alias=New-Alias
-cat=Get-Content
+* cp= Copy-Item
+* rm=Remove-Item
+* cd=Set-Location
+* mkdir=New-Item-ItemType
+* man=Get-Help
+* history=Get-History
+* alias=New-Alias
+* cat=Get-Content
 #COMMANDE POUR TROUVER CMDLETS POWERSHELL#
 - Get-Command -Name *copy*
 - Get-Command -Name *remove*
