@@ -1,0 +1,31 @@
+# Création des dossiers EvenFolder et OddFolder
+New-Item -ItemType Directory -Path C:\ -Name EvenFolder -Force
+New-Item -ItemType Directory -Path C:\ -Name OddFolder -Force
+
+# Fonction pour déplacer les fichiers selon leur numéro
+function Move-FilesBasedOnNumber {
+    param (
+        [string]$SourcePath
+    )
+
+    # Récupérer les fichiers du dossier source
+    Get-ChildItem -Path $SourcePath -File | ForEach-Object {
+        # Extraire le numéro du fichier
+        if ($_ -match 'File(\d+)') {
+            $FileNumber = [int]$matches[1]
+
+            # Vérifier si le numéro est pair ou impair
+            if ($FileNumber % 2 -eq 0) {
+                # Déplacer vers EvenFolder
+                Move-Item -Path $_.FullName -Destination C:\EvenFolder
+            } else {
+                # Déplacer vers OddFolder
+                Move-Item -Path $_.FullName -Destination C:\OddFolder
+            }
+        }
+    }
+}
+
+# Appliquer la fonction aux dossiers FolderTest1 et FolderTest2
+Move-FilesBasedOnNumber -SourcePath C:\FolderTest1
+Move-FilesBasedOnNumber -SourcePath C:\FolderTest2
